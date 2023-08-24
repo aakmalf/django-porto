@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% block page_title %}
+<title>AF | Portofolio</title>
+{% endblock page_title %} {% block name %}
+
+<section class="border-bottom mt-4">
+  <h2>AKMAL FAUZI</h2>
+  <p class="font-weight-light">Graduate Student</p>
+</section>
+{% endblock name %} {% block content %}
+
+<!-- About Me -->
+<section id="about" class="border-bottom mt-3 pb-3">
+  <h3>About Me</h3>
+  <p class="justify-content-between text">
+    I am a graduate student at Kanazawa University, specializing in
+    Computational Science. I have a strong interest in data science,
+    particularly in the field of material informatics. My research is to use AI
+    to predict material properties. My practical experience as a data analyst at
+    an agritech startup has enhanced my ability to extract valuable insights
+    from diverse datasets, contributing to well-informed decision-making.
+  </p>
+
+  <a href="#" class="text-decoration-none">More Details</a>
+</section>
+
+<!-- end of About me -->
+
+<!-- Projects -->
+<section id="projects" class="border-bottom mt-3 pb-3">
+  <h3 class="mb-3">Latest Projects</h3>
+
+  <div class="row mb-3">
+    <div class="col-sm-6 d-flex mb-2">
+      <div class="card flex-fill">
+        <div class="card-body">
+          <h5 class="card-title fs-6">Special title treatment</h5>
+          <p class="card-text text">
+            With supporting text below as a natural lead-in to additional
+            content.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 d-flex mb-2">
+      <div class="card flex-fill">
+        <div class="card-body">
+          <h5 class="card-title fs-6">Special title treatment</h5>
+          <p class="card-text text">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt,
+            optio facere neque sint libero temporibus officia aspernatur ipsam,
+            pariatur, aliquid voluptatem doloribus!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a
+    class="text-decoration-none {% if request.resolver_match.url_name == 'index' and request.resolver_match.app_name == 'projects' %}active{% endif %}"
+    href="{% url 'projects:index' 1 %}"
+    >More Details</a
+  >
+</section>
+<!-- end of projects -->
+
+<!-- Contacts -->
+
+<section id="contact" class="border-bottom mt-3 pb-3">
+  <h3 class="mb-3">Contact</h3>
+  <button type="button" class="btn btn-sm btn-outline-secondary">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      class="bi bi-envelope"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
+      />
+    </svg>
+
+    Send Email
+  </button>
+</section>
+<!-- end of contatcs -->
+
+{% endblock content %}
