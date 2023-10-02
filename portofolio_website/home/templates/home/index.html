@@ -28,31 +28,40 @@
 <!-- Projects -->
 <section id="projects" class="border-bottom mt-3 pb-3">
   <h3 class="mb-3">Latest Projects</h3>
-
   <div class="row mb-3">
+    {%for project in list_projects%}
     <div class="col-sm-6 d-flex mb-2">
       <div class="card flex-fill">
         <div class="card-body">
-          <h5 class="card-title fs-6">Special title treatment</h5>
-          <p class="card-text text">
-            With supporting text below as a natural lead-in to additional
-            content.
-          </p>
+          <h5 class="card-title fs-6 fw-bold mb-0">{{project.title}}</h5>
+          {% for category in project.categories.all %}
+          <span class="text">{{category}} | </span>
+          {% endfor %}
+          <p class="card-text text mt-1">{{project.description}}</p>
+
+          <a href="{{project.link}}" class="btn-link">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="blue"
+              class=""
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+              />
+            </svg>
+          </a>
         </div>
       </div>
     </div>
-    <div class="col-sm-6 d-flex mb-2">
-      <div class="card flex-fill">
-        <div class="card-body">
-          <h5 class="card-title fs-6">Special title treatment</h5>
-          <p class="card-text text">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-            optio facere neque sint libero temporibus officia aspernatur ipsam,
-            pariatur, aliquid voluptatem doloribus!
-          </p>
-        </div>
-      </div>
-    </div>
+    {%endfor%}
   </div>
 
   <a
